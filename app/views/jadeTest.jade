@@ -1,0 +1,11 @@
+.header
+  h1= title
+  p
+.body
+  p= body
+.footer
+  div
+    a(href="http://www.baidu.com")= author.name
+  ul
+    each tag, index in tags
+      li= tag
