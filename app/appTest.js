@@ -42,11 +42,19 @@ app.get('/1/admin/:username', function(request, response, next){
 });
 
 //v3
-//app.param('username', function(request, response, next, username){
-//	requset.user = users;
-//	return next();
-//});
-
+app.param('v3Username', function(request, response, next, username){
+	console.log('Username param was detected: ', username);
+	findUserByUsername(username, function(error, user){
+		if(error) return next(error);
+		return next();
+	});
+});
+app.get('/v3/users/:v3Username', function(request, response, next){
+	return response.render('user', request.user);
+});
+app.get('/v3/admin/:v3Username', function(request, response, next){
+	return response.render('admin', request.user);
+});
 
 
 app.use(errorhandler());
