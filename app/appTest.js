@@ -56,8 +56,27 @@ app.get('/v3/admin/:v3Username', function(request, response, next){
 	return response.render('admin', request.user);
 });
 
+//v4
+app.param('username', function(request, response, next, username){
+	console.log('Username param was detected: ', username);
+	findUserByUsername(username, function(error, user){
+		if(error) return next(error);
+		return next();
+	});
+});
+router.get('/users/:username', function(req, res, next){
+	return res.render('user', req.user);
+});
+router.get('/admin/:username', function(req, res, next){
+	return res.render('admin', req.user);
+})
+app.use('/v4', router);
+
 
 app.use(errorhandler());
 var server = app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + server.address().port);
 });
+
+
+
