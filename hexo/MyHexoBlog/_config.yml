@@ -28,7 +28,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
@@ -60,6 +60,18 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# 设定归档页面文章的篇数
+index_generator:
+  per_page: 5
+
+archive_generator:
+  per_page: 20
+  yearly: true
+  monthly: true
+
+tag_generator:
+  per_page: 10
+
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
@@ -85,11 +97,26 @@ deploy:
 #站点内的地址
 avatar: /uploads/avatar.ico
 
-# Duoshuo
-#duoshuo_shortname: notes-iissnan
+# RSS 链接
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 
+# 友情链接
+# title, chinese available
+links_title: Links
+# links
+links:
+  MacTalk: http://macshuo.com/
+
+# Duoshuo
+duoshuo_shortname: eugeneyj
 # Disqus
 #disqus_shortname: 
+
+# 多说热评文章 true 或者 false
+duoshuo_hotartical: true
 
 # Social links
 social:
@@ -99,6 +126,15 @@ social:
   #DouBan: http://douban.com/people/iissnan
   #ZhiHu: http://www.zhihu.com/people/iissnan
 
+# 分享服务优先选择 JiaThis，也就是说，当同时开启了 JiaThis、多说分享，将仅启用 JiaThis
+# JiaThis 分享服务
+jiathis: true
+# 百度分享服务
+#baidushare: true
+
+# 多说分享服务
+#duoshuo_share: true
+ 
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
@@ -108,12 +144,15 @@ social:
 # See: https://www.google.com/webmasters/
 #google_site_verification: VvyjvVXcJQa0QklHipu6pwm2PJGnnchIqX7s5JbbT_0
 
+# Swiftype Search Key
+swiftype_key: 7xXAWnaAmpRJe35DS8xs
+
 # Google Analytics
 # Google分析ID
-#google_analytics:
+google_analytics: UA-69053272-1
 
 # 百度分析ID
-#baidu_analytics: 50c15455e37f70aea674ff4a663eef27
+baidu_analytics: adb3d489a19a11945d6d5095f22b7480
 
 # Specify the date when the site was setup
 since: 2015
