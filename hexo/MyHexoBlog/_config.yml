@@ -83,7 +83,8 @@ theme: next
 #注意：配置好git等密钥、账号、密码等才能用部署命令进行自动部署
 deploy:
   type: git
-  repo: git@github.com:Ernestyj/ernestyj.github.io.git
+  repo: https://github.com/Ernestyj/ernestyj.github.io.git
+  #repo: git@github.com:Ernestyj/ernestyj.github.io.git
   #branch: master
   #message: 
 
