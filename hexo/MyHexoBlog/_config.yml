@@ -83,8 +83,8 @@ theme: next
 #注意：配置好git等密钥、账号、密码等才能用部署命令进行自动部署
 deploy:
   type: git
-  repo: https://github.com/Ernestyj/ernestyj.github.io.git
-  branch: master
+  repo: git@github.com:Ernestyj/ernestyj.github.io.git
+  #branch: master
   #message: 
 
 # =============================================================================
@@ -153,6 +153,12 @@ google_analytics: UA-69053272-1
 
 # 百度分析ID
 baidu_analytics: adb3d489a19a11945d6d5095f22b7480
+
+#SiteMap 搜索收录
+sitemap:
+path: sitemap.xml
+baidusitemap:
+path: baidusitemap.xml
 
 # Specify the date when the site was setup
 since: 2015
