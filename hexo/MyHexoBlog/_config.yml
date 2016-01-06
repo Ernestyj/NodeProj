@@ -16,7 +16,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 # 博客地址
-url: http://ernestyj.github.io/
+url: http://eugeneyang.com/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -88,7 +88,9 @@ theme: next
 #注意：配置好git等密钥、账号、密码等才能用部署命令进行自动部署
 deploy:
   type: git
-  repo: https://github.com/Ernestyj/ernestyj.github.io.git
+  repo: 
+    github: https://github.com/Ernestyj/ernestyj.github.io.git
+    gitcafe: https://gitcafe.com/Ernestyj/Ernestyj.git
   #repo: git@github.com:Ernestyj/ernestyj.github.io.git
   #branch: master
   #message: 
