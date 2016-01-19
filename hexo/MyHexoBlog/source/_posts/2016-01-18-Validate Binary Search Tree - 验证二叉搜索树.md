@@ -2,6 +2,7 @@
 
 
 
+
 title: Validate Binary Search Tree - 验证二叉搜索树
 date: 2016-01-18 20:44:47
 categories: 
@@ -10,7 +11,7 @@ tags:
 - java
 - 算法
 - LeetCode
-<!--updated: 2016-01-18 21:40:47-->
+<!--updated: 2016-01-19 21:40:47-->
 ---
 
 ### Validate Binary Search Tree - 验证二叉搜索树
@@ -24,7 +25,7 @@ tags:
 
 参考：http://www.programcreek.com/2012/12/leetcode-validate-binary-search-tree-java/
 
-完整的java代码如下：
+完整的java代码如下（给出两种递归方式）：
 
 ```java
 public class ValidateBinarySearchTree {
@@ -57,6 +58,33 @@ public class ValidateBinarySearchTree {
         if (min>=root.val || root.val>=max) return false;
         return dfs(root.left, min, root.val) && dfs(root.right, root.val, max);
     }
-    
+
+
+    private boolean isValid = true;
+    private TreeNode pre = null;
+    /**与上述方法时间复杂度一致
+     * 另一种递归思路,类似Recover Binary Search Tree
+     * 注意pre存的是中序次序的上一个节点
+     * @param root
+     * @return
+     */
+    public boolean isValidBST1(TreeNode root) {
+        inOrder(root);
+        return isValid;
+    }
+    private void inOrder(TreeNode root){
+        if (root == null) return;
+        inOrder(root.left);
+        if (pre == null) pre = root;
+        else {
+            if (pre.val >= root.val){
+                isValid = false;
+                return;
+            }
+            pre = root;
+        }
+        inOrder(root.right);
+    }
+
 }
 ```
