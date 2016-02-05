@@ -31,7 +31,8 @@ tags:
 
 完整的java代码如下（第二种方法）：
 
-```javapublic class PopulatingNextRightPointersInEachNode {
+```java
+public class PopulatingNextRightPointersInEachNode {
 
     public static class TreeLinkNode {
         int val;
